@@ -50,7 +50,7 @@ services:
         LCN_URL: "https://brain.poc17.eduwallet.nl/trpc"
         LCN_API_URL: "https://brain.poc17.eduwallet.nl/api"
         CLOUD_URL: "https://cloud.poc17.eduwallet.nl/trpc"
-        API_URL: "https://api.poc17.eduwallet.nl/trpc"
+        API_URL: "https://lca.poc17.eduwallet.nl/trpc"
     expose:
       - 3000
     depends_on:
@@ -69,7 +69,7 @@ services:
       LCN_URL: https://brain.poc17.eduwallet.nl/trpc
       LCN_API_URL: https://brain.poc17.eduwallet.nl/api
       CLOUD_URL: https://cloud.poc17.eduwallet.nl/trpc
-      API_URL: https://api.poc17.eduwallet.nl/trpc
+      API_URL: https://lca.poc17.eduwallet.nl/trpc
       APP_FULL_URL: https://frontend.poc17.eduwallet.nl
       WEB3AUTH_TESTNET_CLIENT_ID: "BI4pfLcbIIaVSRIAq7NXoI0CJAtsoLxqOdn-xmuOQM_wHK_tA6Qm_GvspdO9rC-a4jfuN7zoC-zjJWLAPGWKzrQ"
 
@@ -78,6 +78,7 @@ services:
       - "traefik.http.routers.app.rule=Host(`frontend.poc17.eduwallet.nl`)"
       - "traefik.http.routers.app.entrypoints=websecure"
       - "traefik.http.routers.app.tls.certresolver=myresolver"
+      - "traefik.http.services.app.loadbalancer.server.port=3000"
 
   # ── Core application services ──────────────────────────────────
 
@@ -121,6 +122,7 @@ services:
       - "traefik.http.routers.brain.rule=Host(`brain.poc17.eduwallet.nl`)"
       - "traefik.http.routers.brain.entrypoints=websecure"
       - "traefik.http.routers.brain.tls.certresolver=myresolver"
+      - "traefik.http.services.brain.loadbalancer.server.port=4000"
 
   cloud:
     image: welibrary/lcn-cloud-service
@@ -151,6 +153,7 @@ services:
       - "traefik.http.routers.cloud.rule=Host(`cloud.poc17.eduwallet.nl`)"
       - "traefik.http.routers.cloud.entrypoints=websecure"
       - "traefik.http.routers.cloud.tls.certresolver=myresolver"
+      - "traefik.http.services.cloud.loadbalancer.server.port=4100"
 
   api:
     image: welibrary/lca-api-service
@@ -186,6 +189,7 @@ services:
       - "traefik.http.routers.api.rule=Host(`lca.poc17.eduwallet.nl`)"
       - "traefik.http.routers.api.entrypoints=websecure"
       - "traefik.http.routers.api.tls.certresolver=myresolver"
+      - "traefik.http.services.api.loadbalancer.server.port=5100"
 
   # ── Databases ──────────────────────────────────────────────────
 

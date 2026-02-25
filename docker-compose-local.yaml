@@ -76,6 +76,7 @@ services:
       - "traefik.http.routers.app.rule=Host(`frontend.local`)"
       - "traefik.http.routers.app.entrypoints=websecure"
       - "traefik.http.routers.app.tls=true"
+      - "traefik.http.services.app.loadbalancer.server.port=3000"
 
   # ── Core application services ──────────────────────────────────
 
@@ -119,6 +120,7 @@ services:
       - "traefik.http.routers.brain.rule=Host(`brain.local`)"
       - "traefik.http.routers.brain.entrypoints=websecure"
       - "traefik.http.routers.brain.tls=true"
+      - "traefik.http.services.brain.loadbalancer.server.port=4000"
 
   cloud:
     image: welibrary/lcn-cloud-service
@@ -149,6 +151,7 @@ services:
       - "traefik.http.routers.cloud.rule=Host(`cloud.local`)"
       - "traefik.http.routers.cloud.entrypoints=websecure"
       - "traefik.http.routers.cloud.tls=true"
+      - "traefik.http.services.cloud.loadbalancer.server.port=4100"
 
   api:
     image: welibrary/lca-api-service
@@ -184,6 +187,7 @@ services:
       - "traefik.http.routers.api.rule=Host(`lca.local`)"
       - "traefik.http.routers.api.entrypoints=websecure"
       - "traefik.http.routers.api.tls=true"
+      - "traefik.http.services.api.loadbalancer.server.port=5100"
 
   # ── Databases ──────────────────────────────────────────────────
 
