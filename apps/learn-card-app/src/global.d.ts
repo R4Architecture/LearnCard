@@ -2,6 +2,7 @@ declare var IS_PRODUCTION: boolean;
 declare var SENTRY_DSN: string;
 declare var SENTRY_ENV: string;
 
+declare var APP_FULL_URL: string | undefined;
 declare var LCN_URL: string | undefined;
 declare var LCN_API_URL: string | undefined;
 declare var CLOUD_URL: string | undefined;

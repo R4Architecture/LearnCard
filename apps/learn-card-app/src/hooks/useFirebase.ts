@@ -82,7 +82,8 @@ export const useFirebase = () => {
                     domain:
                         IS_PRODUCTION || Capacitor.getPlatform() === 'android'
                             ? `https://${FIREBASE_REDIRECT_URL}`
-                            : 'http://localhost:3000',
+                            : APP_FULL_URL,
+//                            : 'http://localhost:3000',
                 },
             });
             closeModal();
@@ -109,7 +110,7 @@ export const useFirebase = () => {
 
         try {
             await web3Auth.connect({
-                verifier: 'learncardapp-firebase',
+                verifier: 'educredentials-firebase',
                 verifierId: userUid,
                 idToken: token,
             });
@@ -277,7 +278,8 @@ export const useFirebase = () => {
             let url =
                 IS_PRODUCTION || Capacitor.getPlatform() === 'android'
                     ? `https://${FIREBASE_REDIRECT_URL}/login`
-                    : 'http://localhost:3000/login';
+                    : `${APP_FULL_URL}/login`;
+//                    : 'http://localhost:3000/login';
             if (customRedirectUrl) url = customRedirectUrl;
 
             const actionCodeSettings = {

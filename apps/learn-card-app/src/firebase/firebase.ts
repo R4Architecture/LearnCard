@@ -14,15 +14,26 @@ export type RawFirebaseConfig = {
     measurementId: string;
 };
 
+// export const firebaseConfig: RawFirebaseConfig = {
+//     apiKey: 'AIzaSyDQJcEDxhxdxRAVdIDBzcE1x6D-KOj6N4o',
+//     authDomain: 'learncard.firebaseapp.com',
+//     projectId: 'learncard',
+//     storageBucket: 'learncard.appspot.com',
+//     messagingSenderId: '776298253175',
+//     appId: '1:776298253175:web:dd996767bf1a2a37a2ef72',
+//     measurementId: 'G-XPHGSD6Q59',
+// };
+
 export const firebaseConfig: RawFirebaseConfig = {
-    apiKey: 'AIzaSyDQJcEDxhxdxRAVdIDBzcE1x6D-KOj6N4o',
-    authDomain: 'learncard.firebaseapp.com',
-    projectId: 'learncard',
-    storageBucket: 'learncard.appspot.com',
-    messagingSenderId: '776298253175',
-    appId: '1:776298253175:web:dd996767bf1a2a37a2ef72',
-    measurementId: 'G-XPHGSD6Q59',
+  apiKey: "AIzaSyBr_LH_ml-QXN5Saq83qOH9qSvkFvUFB9s",
+  authDomain: "educredentials.firebaseapp.com",
+  projectId: "educredentials",
+  storageBucket: "educredentials.firebasestorage.app",
+  messagingSenderId: "523560779587",
+  appId: "1:523560779587:web:9965a4a94be4b584e679f6",
+  measurementId: "G-30F9S11RWK"
 };
+
 
 const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);

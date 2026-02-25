@@ -98,6 +98,14 @@ COPY apps/learn-card-app apps/learn-card-app
 
 RUN rm -rf node_modules/.cache/nx
 
+# Build-time args needed by Vite's define (baked into the JS bundle)
+ARG WEB3AUTH_TESTNET_CLIENT_ID
+ARG WEB3AUTH_MAINNET_CLIENT_ID
+ARG APP_FULL_URL
+ENV WEB3AUTH_TESTNET_CLIENT_ID=$WEB3AUTH_TESTNET_CLIENT_ID
+ENV WEB3AUTH_MAINNET_CLIENT_ID=$WEB3AUTH_MAINNET_CLIENT_ID
+ENV APP_FULL_URL=$APP_FULL_URL
+
 RUN pnpm exec nx docker-build learn-card-app
 
 # Expose the port the app runs on

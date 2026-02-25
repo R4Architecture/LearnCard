@@ -12,10 +12,10 @@ export const WEB3AUTH_NETWORK_CONFIG = {
     testnet: {
         modalConfig: {
             clientId: TESTNET_CLIENT_ID,
-            web3AuthNetwork: TORUS_LEGACY_NETWORK.TESTNET,
+            web3AuthNetwork: 'sapphire_devnet' as any,
         },
         adapterConfig: {
-            network: TORUS_LEGACY_NETWORK.TESTNET,
+            network: 'sapphire_devnet' as any,
             clientId: TESTNET_CLIENT_ID,
         },
     },

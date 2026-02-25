@@ -362,15 +362,15 @@ export const useWeb3Auth = (onLogin?: () => Promise<any>) => {
                     redirectUrl,
                     loginConfig: {
                         learncardFirebase: {
-                            name: 'learncardapp-firebase',
-                            verifier: 'learncardapp-firebase',
+                            name: 'educredentials-firebase',
+                            verifier: 'educredentials-firebase',
                             typeOfLogin: 'jwt',
                             clientId:
                                 '776298253175-kkf562eofl541vu0oedfdvrk40bpkbh7.apps.googleusercontent.com',
                         },
                         learncardFirebaseMainnet: {
-                            name: 'learncardapp-firebase-cyan-mainnet',
-                            verifier: 'learncardapp-firebase-cyan-mainnet',
+                            name: 'educredentials-firebase',
+                            verifier: 'educredentials-firebase',
                             typeOfLogin: 'jwt',
                             clientId:
                                 '776298253175-kkf562eofl541vu0oedfdvrk40bpkbh7.apps.googleusercontent.com',
