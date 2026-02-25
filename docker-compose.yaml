@@ -141,7 +141,6 @@ services:
       - "localhost:host-gateway"
     restart: unless-stopped
     environment:
-      IS_OFFLINE: true
       PORT: 4100
       LEARN_CLOUD_SEED: b
       LEARN_CLOUD_MONGO_URI: "mongodb://mongodb:27017?ssl=false&replicaSet=rs0"
@@ -175,7 +174,6 @@ services:
       - "localhost:host-gateway"
     restart: unless-stopped
     environment:
-      IS_OFFLINE: true
       PORT: 5100
       SEED: c
       AUTHORIZED_DIDS: "did:web:brain.poc17.eduwallet.nl"
