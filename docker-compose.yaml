@@ -44,6 +44,13 @@ services:
     build:
       context: .
       dockerfile: apps/learn-card-app/Dockerfile
+      args:
+        WEB3AUTH_TESTNET_CLIENT_ID: "BI4pfLcbIIaVSRIAq7NXoI0CJAtsoLxqOdn-xmuOQM_wHK_tA6Qm_GvspdO9rC-a4jfuN7zoC-zjJWLAPGWKzrQ"
+        APP_FULL_URL: "https://frontend.poc17.eduwallet.nl"
+        LCN_URL: "https://brain.poc17.eduwallet.nl/trpc"
+        LCN_API_URL: "https://brain.poc17.eduwallet.nl/api"
+        CLOUD_URL: "https://cloud.poc17.eduwallet.nl/trpc"
+        API_URL: "https://api.poc17.eduwallet.nl/trpc"
     expose:
       - 3000
     depends_on:

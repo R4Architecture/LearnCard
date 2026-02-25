@@ -45,6 +45,10 @@ services:
       args:
         WEB3AUTH_TESTNET_CLIENT_ID: "BI4pfLcbIIaVSRIAq7NXoI0CJAtsoLxqOdn-xmuOQM_wHK_tA6Qm_GvspdO9rC-a4jfuN7zoC-zjJWLAPGWKzrQ"
         APP_FULL_URL: "https://frontend.local"
+        LCN_URL: "https://brain.local/trpc"
+        LCN_API_URL: "https://brain.local/api"
+        CLOUD_URL: "https://cloud.local/trpc"
+        API_URL: "https://lca.local/trpc"
     expose:
       - 3000
     depends_on:
