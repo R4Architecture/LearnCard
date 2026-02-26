@@ -142,6 +142,7 @@ services:
     restart: unless-stopped
     environment:
       PORT: 4100
+      DOMAIN_NAME: "cloud.poc17.eduwallet.nl"
       LEARN_CLOUD_SEED: b
       LEARN_CLOUD_MONGO_URI: "mongodb://mongodb:27017?ssl=false&replicaSet=rs0"
       LEARN_CLOUD_MONGO_DB_NAME: learn-cloud
@@ -175,6 +176,7 @@ services:
     restart: unless-stopped
     environment:
       PORT: 5100
+      DOMAIN_NAME: "lca.poc17.eduwallet.nl"
       SEED: c
       AUTHORIZED_DIDS: "did:web:brain.poc17.eduwallet.nl"
       MONGO_URI: "mongodb://mongodb:27017?ssl=false&replicaSet=rs0"

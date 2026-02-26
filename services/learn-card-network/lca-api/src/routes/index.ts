@@ -36,13 +36,14 @@ export const createContext = async (
 ): Promise<Context> => {
     const event = 'event' in options ? options.event : options.req;
     const authHeader = event.headers.authorization;
-    const domainName = 'requestContext' in event ? event.requestContext.domainName : '';
+    const _domainName = 'requestContext' in event ? event.requestContext.domainName : '';
     const debug = process.env.NODE_ENV === 'test';
 
-    const domain =
-        !domainName || process.env.IS_OFFLINE
+    const domain = process.env.DOMAIN_NAME
+        ? process.env.DOMAIN_NAME.replace(/:/g, '%3A')
+        : !_domainName || process.env.IS_OFFLINE
             ? `localhost%3A${process.env.PORT || 3000}`
-            : domainName;
+            : _domainName;
 
     try {
         if (authHeader && authHeader.split(' ').length === 2) {
