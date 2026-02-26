@@ -124,6 +124,9 @@ services:
 
   cloud:
     image: welibrary/lcn-cloud-service
+    build:
+      context: .
+      dockerfile: services/learn-card-network/learn-cloud-service/Dockerfile
     ports:
       - "4100:4100"
     expose:
