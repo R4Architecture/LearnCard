@@ -68,6 +68,12 @@ export default defineConfig(({ mode }) => {
             CORS_PROXY_API_KEY: env.CORS_PROXY_API_KEY
                 ? JSON.stringify(env.CORS_PROXY_API_KEY)
                 : 'undefined',
+            NETWORK_CONSENT_CONTRACT_URI: process.env.NETWORK_CONSENT_CONTRACT_URI
+                ? `"${process.env.NETWORK_CONSENT_CONTRACT_URI}"`
+                : 'undefined',
+            NETWORK_CONSENT_CONTRACT_OWNER_DID: process.env.NETWORK_CONSENT_CONTRACT_OWNER_DID
+                ? `"${process.env.NETWORK_CONSENT_CONTRACT_OWNER_DID}"`
+                : 'undefined',
         },
         resolve: {
             alias: {

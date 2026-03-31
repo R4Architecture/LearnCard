@@ -9,8 +9,13 @@ import {
 } from 'learn-card-base/types/boostAndCredentialMetadata';
 
 const NETWORK_CONTRACT_URI =
-    'lc:network:network.learncard.com/trpc:contract:2ed7b889-c06e-47c4-835b-d924c17e9891';
-const CONTRACT_OWNER_DID = 'did:web:network.learncard.com:users:learn-cloud';
+    typeof NETWORK_CONSENT_CONTRACT_URI !== 'undefined' && NETWORK_CONSENT_CONTRACT_URI
+        ? NETWORK_CONSENT_CONTRACT_URI
+        : 'lc:network:network.learncard.com/trpc:contract:2ed7b889-c06e-47c4-835b-d924c17e9891';
+const CONTRACT_OWNER_DID =
+    typeof NETWORK_CONSENT_CONTRACT_OWNER_DID !== 'undefined' && NETWORK_CONSENT_CONTRACT_OWNER_DID
+        ? NETWORK_CONSENT_CONTRACT_OWNER_DID
+        : 'did:web:network.learncard.com:users:learn-cloud';
 
 // All possible contract categories, preferring the contractCredentialTypeOverride if available
 const CATEGORIES: string[] = Object.values(categoryMetadata).reduce((categories, category) => {

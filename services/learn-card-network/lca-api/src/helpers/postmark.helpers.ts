@@ -34,13 +34,11 @@ export const sendEmailWithTemplate = async (
 // helper to construct the from address
 export const getFrom = ({
     brand = POSTMARK_BRAND_NAME!,
-    domain = POSTMARK_FROM_EMAIL!,
-    mailbox = 'login',
+    domain = POSTMARK_FROM_EMAIL!
 }: {
     brand?: string;
     domain?: string;
-    mailbox?: string;
 } = {}): string => {
     if (!domain) throw new Error('Missing POSTMARK_FROM (domain)');
-    return `${brand} <${mailbox}@${domain}>`;
+    return `${brand} <${domain}>`;
 };

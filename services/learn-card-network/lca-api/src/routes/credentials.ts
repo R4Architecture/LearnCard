@@ -145,7 +145,7 @@ export const credentialsRouter = t.router({
                         issuer,
                         credential,
                     },
-                    getFrom({ mailbox: 'endorsement' })
+                    getFrom()
                 );
                 return true;
             } catch (error) {

@@ -290,7 +290,7 @@ export const firebaseRouter = t.router({
                                 verificationEmail: email,
                                 recipient: { name: email },
                             },
-                            getFrom({ mailbox: 'login' })
+                            getFrom()
                         );
                     } catch (error) {
                         console.error('Failed to send verification email:', error);
