@@ -200,8 +200,10 @@ services:
       METABASE_SECRET_KEY: notARealSecretKey
       SCALEWAY_API_KEY:
       SCALEWAY_REGION: fr-par
-      POSTMARK_FROM_EMAIL:
-      POSTMARK_BRAND_NAME:
+      POSTMARK_FROM_EMAIL: ${POSTMARK_FROM_EMAIL:-}
+      POSTMARK_BRAND_NAME: ${POSTMARK_BRAND_NAME:-}
+      POSTMARK_SERVER_TOKEN: ${POSTMARK_SERVER_TOKEN:-}
+      POSTMARK_LOGIN_CODE_TEMPLATE_ID: ${POSTMARK_LOGIN_CODE_TEMPLATE_ID:-}
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.api.rule=Host(`lca.poc17.eduwallet.nl`)"
